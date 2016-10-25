@@ -12,7 +12,7 @@
     "start": "ember server",
     "test": "ember test"
   },
-  "repository": "",
+  "repository": "git+https://github.com/KisaneNeko/ember-tutorial.git",
   "engines": {
     "node": ">= 0.12.0"
   },
