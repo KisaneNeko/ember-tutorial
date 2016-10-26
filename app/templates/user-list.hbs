@@ -1,0 +1,27 @@
+{{#search-user filter=(action 'filterByLastName') as |model|}}
+  <div class="row">
+      <table class="table table-bordered table-striped user-table">
+          <thead>
+          <tr>
+              <th>Imię</th>
+              <th>Nazwisko</th>
+              <th>Data urodzenia</th>
+              <th>Pesel</th>
+              <th>Miasto</th>
+              <th>Telefon</th>
+              <th>Email</th>
+              <th>Actions</th>
+          </tr>
+          </thead>
+          <tbody>
+
+            {{#each model as |user|}}
+                <tr>
+                    {{user-profile user=user}}
+                    <td></td>
+                </tr>
+            {{/each}}
+          </tbody>
+      </table>
+  </div>
+{{/search-user}}
