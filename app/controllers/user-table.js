@@ -2,9 +2,9 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
   actions: {
-    filterByLastName(param) {
+    filterBylastname(param) {
       if (param !== '') {
-        return this.get('store').query('user', { lastName: param });
+        return this.get('store').query('user', { lastname: param });
       } else {
         return this.get('store').findAll('user');
       }

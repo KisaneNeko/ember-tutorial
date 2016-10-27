@@ -1,4 +1,4 @@
-{{#search-user filter=(action 'filterByLastName') as |model|}}
+{{#search-user filter=(action 'filterBylastname') as |model|}}
   <div class="row">
       <table class="table table-bordered table-striped user-table">
           <thead>
@@ -14,12 +14,18 @@
           </tr>
           </thead>
           <tbody>
-
+          <tr>
+              <td>{{input value=name class="form-control"}}</td>
+              <td>{{input value=lastname class="form-control"}}</td>
+              <td>{{input value=birthdate class="form-control"}}</td>
+              <td>{{input value=personalin class="form-control"}}</td>
+              <td>{{input value=city class="form-control"}}</td>
+              <td>{{input value=phone class="form-control"}}</td>
+              <td>{{input value=email class="form-control"}}</td>
+              <td><button class="btn btn-default" {{action 'addUser'}}>Dodaj</button></td>
+          </tr>
             {{#each model as |user|}}
-                <tr>
-                    {{user-profile user=user}}
-                    <td></td>
-                </tr>
+                {{user-profile user=user delete=(action 'deleteUser')}}
             {{/each}}
           </tbody>
       </table>

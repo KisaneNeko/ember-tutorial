@@ -8,8 +8,6 @@ export default Ember.Component.extend({
     this._super(...arguments);
     this.get('filter')('').then(results => this.set('results', results));
     const model = this.get('model');
-    console.log(model);
-
   },
 
   actions: {
