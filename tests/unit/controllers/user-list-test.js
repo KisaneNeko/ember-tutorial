@@ -7,6 +7,32 @@ moduleFor('controller:user-list', 'Unit | Controller | user list', {
 
 // Replace this with your real tests.
 test('it exists', function(assert) {
-  let controller = this.subject();
-  assert.ok(controller);
+  let ctrl = this.subject();
+
+  ctrl.set('name', 'foo');
+  ctrl.set('lastname', 'foo');
+  ctrl.set('birthdate', 'foo');
+  ctrl.set('personalin', 'foo');
+  ctrl.set('city', 'foo');
+  ctrl.set('phone', 'foo');
+  ctrl.set('email', 'foo');
+  ctrl.set('store', {
+    createRecord: (prop, data) => {
+        assert.equal(prop, 'user');
+        assert.deepEqual(data, {
+          name: 'foo',
+          lastname: 'foo',
+          birthdate: 'foo',
+          personalin: 'foo',
+          city: 'foo',
+          phone: 'foo',
+          email: 'foo'
+        });
+      return {
+        save: () => assert.equal(true, true)
+      };
+    }
+  });
+
+  ctrl.send('addUser');
 });

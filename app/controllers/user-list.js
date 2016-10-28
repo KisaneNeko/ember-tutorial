@@ -10,21 +10,15 @@ export default Ember.Controller.extend({
       }
     },
     addUser() {
-      const name = this.get('name');
-      const lastname = this.get('lastname');
-      const birthdate = this.get('birthdate');
-      const personalin = this.get('personalin');
-      const city = this.get('city');
-      const phone = this.get('phone');
-      const email = this.get('email');
-      const newUser = this.store.createRecord('user', {
-        name,
-        lastname,
-        birthdate,
-        personalin,
-        city,
-        phone,
-        email
+      const newUser = this.store.createRecord('user',
+        {
+          name: this.get('name'),
+          lastname: this.get('lastname'),
+          birthdate: this.get('birthdate'),
+          personalin: this.get('personalin'),
+          city: this.get('city'),
+          phone: this.get('phone'),
+          email: this.get('email')
       });
 
       newUser.save();
@@ -41,8 +35,8 @@ export default Ember.Controller.extend({
 
     deleteUser(id) {
       this.store.findRecord('user', id).then(user => {
-          user.destroyRecord();
-      })
+         user.destroyRecord();
+      });
     }
   }
 });

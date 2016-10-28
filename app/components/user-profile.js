@@ -12,12 +12,7 @@ export default Ember.Component.extend({
     },
 
     open() {
-      this.set('isActive', true)
-    },
-
-    updateModel(label) {
-      const user = this.get('user');
-      user.set(label, 'dupa')
+      this.set('isActive', true);
     }
   },
 
