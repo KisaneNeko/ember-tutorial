@@ -1,7 +1,9 @@
 {{#each labels as |label|}}
     <td>
-      {{get user label}}
-      {{input value=(mut (get user label))}}
+        {{get user label}}
+        {{#if isActive}}
+          {{input value=(mut (get user label))}}
+        {{/if}}
     </td>
 
 
